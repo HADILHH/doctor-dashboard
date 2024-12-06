@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        header {
+            grid-column: span 3;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .stats-card {
+            background-color: #0139b381;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .stats-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .stats-card p {
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .stats-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('glass-pattern.png'); /* الصورة الخلفية الجزازية */
+            background-size: cover;
+            opacity: 0.1; /* درجة التعتيم */
+            border-radius: 8px;
+        }
+
+        .stats-card .card-title {
+            position: relative;
+            z-index: 1;
+        }
+
+        .patient-list {
+            grid-column: span 3;
+            background-color: #0139b381;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .patient-item {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .patient-info h4 {
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .patient-icon {
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <video autoplay loop muted playsinline class="video-bg">
+            <source src="vd2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="dashboard-container">
+        <header>
+            <h1>Welcome, Doctor!</h1>
+            <nav>
+                <ul>
+                    <li><a href="profile-doc.html">Profile</a></li>
+                    <li><a href="doctor-dashboard.html">Appointments</a></li>
+                    <li><a href="#patients">Patients</a></li>
+                    <li><a href="doctor-login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Stats Cards -->
+        <div class="stats-card">
+            <div class="card-title">
+                <h2>Total Appointments</h2>
+                <p>25</p>
+            </div>
+        </div>
+
+        <div class="stats-card">
+            <div class="card-title">
+                <h2>Urgent Appointments</h2>
+                <p>5</p>
+            </div>
+        </div>
+
+        <div class="stats-card">
+            <div class="card-title">
+                <h2>Patients Treated</h2>
+                <p>300</p>
+            </div>
+        </div>
+
+        <!-- Patient List -->
+        <div class="patient-list">
+            <h3>Patient List</h3>
+            <div class="patient-item">
+                <div class="patient-info">
+                    <h4>John Doe</h4>
+                    <p>March 12, 2024</p>
+                    <p>2:30 PM</p>
+                </div>
+                <span class="patient-icon">📩</span>
+            </div>
+            <div class="patient-item">
+                <div class="patient-info">
+                    <h4>Jane Smith</h4>
+                    <p>March 13, 2024</p>
+                    <p>10:00 AM</p>
+                </div>
+                <span class="patient-icon">📩</span>
+            </div>
+            <!-- Add more patients as needed -->
+        </div>
+    </div>
+</body>
+</html>

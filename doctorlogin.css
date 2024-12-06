@@ -1,0 +1,122 @@
+/* تنسيق النموذج */
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* يغطي الفيديو الشاشة بالكامل */
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #000; /* خلفية احتياطية */
+}
+
+.login-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+
+/* تنسيق العنوان */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* تنسيق الحقول */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.7); /* شفافية طفيفة للحقول */
+    color: black; /* لون النص داخل الحقل */
+}
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff66;
+    color: white;
+    margin-top: 10px;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7); /* تأثير ضوء حول الزر */
+    border: 2px solid rgba(0, 123, 255, 0.6); /* حواف شفافة مع تأثير */
+
+}
+
+button:hover {
+    background: #007bff66; /* خلفية شفافة أكبر عند التمرير */
+    box-shadow: 0 0 30px rgba(0, 123, 255, 1); /* توهج أكبر عند التمرير */
+}
+
+
+/* رابط التسجيل */
+.register-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+/* زر العودة */
+.back-button {
+    background-color: #ccc;
+    border: none;
+    color: #333;
+}
+
+.back-button:hover {
+    background-color: #aaa;
+}
+a.create-account {
+    color: #82dcff; /* لون أزرق */
+    text-decoration: none;
+}
+
+a.create-account:hover {
+    text-decoration: underline;
+}
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Register</title>
+    <link rel="stylesheet" href="doctor-register.css">
+</head>
+<body>
+    <div class="background">
+        <video autoplay loop muted playsinline class="video-bg">
+            <source src="vd2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="doctor-register-container">
+        <h2>Doctor Registration</h2>
+        <!-- نموذج التسجيل للطبيب -->
+        <form id="register-form" action="#" method="post">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Create a password">
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+            </div>
+            <button type="submit" class="btn-register">Register</button>
+        </form>
+        <button onclick="goBack()" class="back-button">Back to Login</button>
+    </div>
+
+    <script>
+        // التعامل مع النموذج عند إرسال البيانات
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // منع الإرسال الفعلي للنموذج
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            // تحقق من تطابق كلمة المرور
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // هنا يمكنك إضافة منطق لتخزين بيانات الطبيب أو إرسالها إلى قاعدة البيانات
+            alert('Registration successful!');
+            window.location.href = "doctor-login.html"; // العودة إلى صفحة تسجيل الدخول للطبيب
+        });
+
+        // العودة إلى صفحة تسجيل الدخول للطبيب
+        function goBack() {
+            window.location.href = "doctor-login.html";
+        }
+    </script>
+</body>
+</html>

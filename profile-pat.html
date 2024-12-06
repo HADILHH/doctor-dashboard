@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="background">
+        <video autoplay loop muted playsinline class="video-bg">
+            <source src="vd2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="dashboard-container">
+        <header>
+            <h1>Welcome, Doctor!</h1>
+            <nav>
+                <ul>
+                    <li><a href="profile-doc.css">Profile</a></li>
+                    <li><a href="profile-pat.html">Appointments</a></li>
+                    <li><a href="patient-dashboard.html">Take Appointment</a></li>
+                    <li><a href="patient-login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="patient-list">
+                <h3>Patient List</h3>
+                <div class="patient-item" onclick="openModal('John Doe', 'March 12, 2024', '2:30 PM', 'Urgent', 'Has fever and fatigue')">
+                    <div class="patient-info">
+                        <h4>John Doe</h4>
+                        <p>March 12, 2024</p>
+                        <p>2:30 PM</p>
+                    </div>
+                    <span class="patient-icon">📩</span>
+                </div>
+                <div class="patient-item" onclick="openModal('Jane Smith', 'March 13, 2024', '10:00 AM', 'Non-Urgent', 'Has cough and headache')">
+                    <div class="patient-info">
+                        <h4>Jane Smith</h4>
+                        <p>March 13, 2024</p>
+                        <p>10:00 AM</p>
+                    </div>
+                    <span class="patient-icon">📩</span>
+                </div>
+                <!-- Add more patients as needed -->
+            </div>
+
+            <!-- Modal for Appointment Edit -->
+            <div id="appointment-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Change Appointment for <span id="patient-name"></span></h2>
+                    <p><strong>Current Date:</strong> <span id="current-date"></span></p>
+                    <p><strong>Current Time:</strong> <span id="current-time"></span></p>
+                    
+                    <p><strong>Status:</strong> <span id="patient-status"></span></p> <!-- حالة المريض -->
+
+                    <!-- إضافة الأعراض -->
+                    <p><strong>Symptoms:</strong> <span id="patient-symptoms"></span></p> <!-- أعراض المريض -->
+
+                    <label for="urgent">Is this urgent?</label>
+                    <select id="urgent">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+
+                    <label for="new-date">New Date:</label>
+                    <input type="date" id="new-date">
+
+                    <label for="new-time">New Time:</label>
+                    <input type="time" id="new-time">
+
+                    <button onclick="saveChanges()">Save Changes</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Open the modal and fill in the patient's details
+        function openModal(name, date, time, status, symptoms) {
+            document.getElementById('patient-name').textContent = name;
+            document.getElementById('current-date').textContent = date;
+            document.getElementById('current-time').textContent = time;
+            document.getElementById('patient-status').textContent = status; // عرض الحالة
+            document.getElementById('patient-symptoms').textContent = symptoms; // عرض الأعراض
+            document.getElementById('appointment-modal').style.display = "block";
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById('appointment-modal').style.display = "none";
+        }
+
+        // Save the changes made to the appointment
+        function saveChanges() {
+            const newDate = document.getElementById('new-date').value;
+            const newTime = document.getElementById('new-time').value;
+            const urgent = document.getElementById('urgent').value;
+
+            if (newDate && newTime) {
+                alert("Changes saved!\n" + 
+                    "New Date: " + newDate + "\n" + 
+                    "New Time: " + newTime + "\n" + 
+                    "Urgent: " + (urgent === "yes" ? "Yes" : "No"));
+                closeModal();
+            } else {
+                alert("Please enter both a new date and time.");
+            }
+        }
+    </script>
+</body>
+</html>

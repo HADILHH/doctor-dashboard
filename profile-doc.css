@@ -1,0 +1,135 @@
+/* إضافة تنسيقات الخلفية */
+body {
+    display: flex;
+    justify-content: center; /* لتوسيط المحتوى أفقيًا */
+    align-items: flex-start; /* محاذاة العناصر إلى الأعلى بدلاً من الوسط */
+    min-height: 100vh; /* التأكد من أن الجسم يشغل كل الشاشة */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #000; /* خلفية احتياطية */
+}
+
+.dashboard-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2); /* شفافية الخلفية */
+    backdrop-filter: blur(20px) saturate(180%); /* تأثير الزجاج */
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 40px;
+    width: 1250px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* الظلال */
+    color: rgb(255, 254, 254); /* لون النص */
+    border: 2px solid rgba(0, 123, 255, 0.6); /* حواف شفافة مع تأثير */
+    text-align: center;
+    margin-top: 50px; /* إضافة مسافة من الأعلى */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* تنسيق الهيدر */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(2, 43, 87, 0.8);
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #43c4f7; /* لون ذهبي عند التمرير */
+}
+
+/* تنسيق الأقسام */
+main {
+    margin-top: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 16px;
+}
+
+/* تنسيق تفاصيل الطبيب */
+.doctor-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.doctor-detail {
+    flex: 1;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.doctor-detail h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.doctor-detail p {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* تنسيق الخريطة */
+#doctor-map {
+    height: 400px;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+}

@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000; /* خلفية احتياطية */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لتغطية الفيديو */
+}
+
+.doctor-register-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2); /* شفافية الخلفية */
+    backdrop-filter: blur(20px) saturate(180%); /* تأثير الزجاج */
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 40px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* الظلال */
+    color: rgb(255, 254, 254); /* لون النص */
+    border: 2px solid rgba(0, 123, 255, 0.6); /* حواف شفافة مع تأثير */
+
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.7); /* خلفية شفافة طفيفة */
+    color: black;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff66;
+    color: white;
+    margin-top: 10px;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7); /* تأثير ضوء حول الزر */
+    border: 2px solid rgba(0, 123, 255, 0.6); /* حواف شفافة مع تأثير */
+
+
+}
+
+button:hover {
+    background-color: #0057b362;
+}
+
+.back-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff66;
+    color: white;
+    margin-top: 10px;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7); /* تأثير ضوء حول الزر */
+    border: 2px solid rgba(0, 123, 255, 0.6); /* حواف شفافة مع تأثير */
+
+
+}
+
+.back-button:hover {
+    background-color: #0057b362;
+}

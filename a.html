@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Video Background</title>
+    <link rel="stylesheet" href="b.css">
+</head>
+<body>
+    <div class="background">
+        <!-- Video Background -->
+        <video autoplay loop muted playsinline class="video-bg">
+            <source src="vd.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="login-box">
+        <h2>Bienvenue!</h2>
+        <div class="role-container">
+            <!-- Doctor Section -->
+            <div class="role-option">
+                <img src="doc.png" alt="Doctor" class="role-image"> <!-- صورة الطبيب -->
+                <p></p>
+                <button class="role-button" onclick="navigateTo('doctor')">je suis un Docteur</button>
+            </div>
+
+            <!-- Client Section -->
+            <div class="role-option">
+                <img src="pas.png" alt="Client" class="role-image"> <!-- صورة العميل -->
+                <p></p>
+                <button class="role-button" onclick="navigateTo('client')">je suis un Patient</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // التنقل بناءً على الخيار
+        function navigateTo(role) {
+            if (role === 'doctor') {
+                window.location.href = "doctor-login.html"; // صفحة الطبيب
+            } else if (role === 'client') {
+                window.location.href = "patient-login.html"; // صفحة العميل
+            }
+        }
+    </script>
+    <script src="c.js"></script>
+</body>
+</html>

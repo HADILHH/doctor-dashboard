@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login</title>
+    <link rel="stylesheet" href="doctorlogin.css">
+</head>
+<body>
+    <div class="background">
+        <video autoplay loop muted playsinline class="video-bg">
+            <source src="vd2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="login-box">
+        <h2>Doctor Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="doctor-register.html" class="create-account">Create an account</a></p>
+        <button onclick="goBack()">Back to Home</button>
+    </div>
+
+    <script>
+        // التعامل مع إرسال النموذج والتحقق من البيانات
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // منع الإرسال الفعلي للنموذج
+
+            // الحصول على المدخلات
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // تحقق من البيانات (اختبار بيانات ثابتة هنا)
+            if (email === "doctor@example.com" && password === "123456") {
+                alert('Login successful!');
+                window.location.href = "doctor-dashboard.html"; // التوجيه إلى لوحة التحكم للطبيب
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        });
+
+        // العودة إلى الصفحة الرئيسية
+        function goBack() {
+            window.location.href = "a.html"; // إعادة التوجيه إلى الصفحة الرئيسية
+        }
+    </script>
+</body>
+</html>

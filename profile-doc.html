@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+    <link rel="stylesheet" href="profile-doc.css">
+    <!-- استبدل YOUR_GOOGLE_MAPS_API_KEY بمفتاح API الفعلي -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+    <div class="background">
+        <video autoplay loop muted playsinline class="video-bg">
+            <source src="vd2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="dashboard-container">
+        <header>
+            <h1>Doctor Profile</h1>
+            <nav>
+                <ul>
+                    <li><a href="doctor-dashboard.html">Dashboard</a></li>
+                    <li><a href="doctor-login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section id="doctor-info">
+                <h2>Doctor Information</h2>
+                <div class="doctor-details">
+                    <div class="doctor-detail">
+                        <h4>Name:</h4>
+                        <p>Dr. John Doe</p>
+                    </div>
+                    <div class="doctor-detail">
+                        <h4>Specialty:</h4>
+                        <p>Cardiology</p>
+                    </div>
+                    <div class="doctor-detail">
+                        <h4>Location:</h4>
+                        <p>123 Health St., City, Country</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="doctor-map">
+                <h2>Location on Map</h2>
+                <div id="map" style="height: 400px; width: 100%;"></div> <!-- مكان عرض الخريطة -->
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // تهيئة الخريطة باستخدام Google Maps API
+        function initMap() {
+            const location = { lat: 40.730610, lng: -73.935242 }; // إحداثيات لنيويورك
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: location,
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: "Doctor's Location"
+            });
+        }
+    </script>
+</body>
+</html>
